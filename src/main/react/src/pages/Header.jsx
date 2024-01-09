@@ -20,6 +20,9 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   color: black;
+  @media (max-width: 768px) {
+      height: auto;
+    }
 `;
 
 const Headers = styled.div`
@@ -168,6 +171,9 @@ const Footer = styled.div`
   line-height: 60px;
   color: #8a8c8f;
   background-color: #333333;
+  @media (max-width: 768px) {
+      height: 120px;
+    }
   .linkBox {
     display: flex;
     flex-direction: row;

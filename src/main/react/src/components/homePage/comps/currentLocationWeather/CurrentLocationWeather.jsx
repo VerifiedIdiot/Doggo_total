@@ -25,7 +25,7 @@ const ItemBox = styled.div.attrs({
   align-items: center;
   width: 50%;
   @media (max-width: 768px) {
-    width: 80%;
+    width: 100%;
   }
 `;
 
@@ -39,6 +39,10 @@ const Items = styled.div.attrs({
   height: 90%;
   
   border-radius: 5px;
+    @media (max-width: 768px) {
+      height: 100%;
+      width: 100%;
+    }
 `;
 
 const TopBox = styled.div`
@@ -104,6 +108,7 @@ const TextContainer = styled.div.attrs({
     }
     h1 {
       font-size: 9vw;
+      margin-left: 1vw;
     }
     h3 {
       font-size: 3vw;
@@ -148,7 +153,7 @@ const WeatherIconContainer = styled.div`
   }
   @media (max-width: 768px) {
     p {
-      font-size: 3vw;
+      font-size: 5vw;
     }
     img {
       margin-top: 15px;
@@ -211,17 +216,18 @@ const HourlyWeatherCard = styled.div`
   @media (max-width: 768px) {
     min-width: 19vw;
     img {
-      width: 8vw;
-      height: 8vw;
+      width: 9vw;
+      height: 9vw;
     }
     h3 {
-      font-size: 3vw;
+      font-size: 4vw;
       font-weight: bold;
       color: black;
+
     }
 
     p {
-      font-size: 3vw;
+      font-size: 4vw;
     }
   }
 `;
@@ -256,7 +262,7 @@ const WeatherDetailBox = styled.div`
 
 const SwitchPosition = styled.div`
   position: absolute;
-  top: .5vw; // 필요에 따라 조절하세요
+  top: 1vw; // 필요에 따라 조절하세요
   right: .8vw; // 필요에 따라 조절하세요
   z-index: 10; // 다른 내용물 위에 오도록 설정
 `;
@@ -325,10 +331,12 @@ const CurrentLocationWeather = ({ isOn, toggleWeather, isMobileView }) => {
           // console.log(text);
           // 두 API 요청을 동시에 호출
           const currentWeatherResponse = axios.get(
-            `http://127.0.0.1:5000/api/weather2?x=${coords.x}&y=${coords.y}`
+//             `http://127.0.0.1:5000/api/weather2?x=${coords.x}&y=${coords.y}` // 로컬
+            `https://127.0.0.1:5000/api/weather2?x=${coords.x}&y=${coords.y}` // 보안처리된 원격서버
           );
           const hourlyWeatherResponse = axios.get(
-            `http://127.0.0.1:5000/api/hourly_weather?x=${coords.x}&y=${coords.y}`
+//             `http://127.0.0.1:5000/api/hourly_weather?x=${coords.x}&y=${coords.y}` // 로컬
+            `https://127.0.0.1:5000/api/hourly_weather?x=${coords.x}&y=${coords.y}` // 보안처리된 원격서버
           );
 
           // 모든 요청이 완료될 때까지 기다림

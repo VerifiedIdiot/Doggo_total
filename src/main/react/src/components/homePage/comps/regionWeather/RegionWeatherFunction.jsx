@@ -97,12 +97,12 @@ const CityContainer = styled.div`
 `;
 
 const WeatherIcon = styled.img`
-  margin-top: -2.5vw;
+  margin-top: -2.3vw;
   width: 3vw !important;
   height: 3vw !important;
 
   @media (max-width: 768px) {
-    margin-top: -3.2vw;
+    margin-top: -3.9vw;
     width: 5vw !important;
     height: 5vw !important;
   }

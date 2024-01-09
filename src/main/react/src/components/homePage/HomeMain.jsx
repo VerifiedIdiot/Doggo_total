@@ -32,7 +32,7 @@ const GetOffHeader = styled.div`
 
     @media (max-width: 768px) {
     position: static;
-
+    margin-top: -2.5vw;
     }
 `
 
@@ -64,8 +64,8 @@ const SectionContainer = styled.section.withConfig({
   }
 
   @media (max-width: 768px) {
-    height: 110vw;
-    width: 93vw;
+    height: 140vw;
+    width: 95vw;
   }
 `;
 
